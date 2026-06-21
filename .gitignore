@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Airflow local runtime files
+logs/
+plugins/__pycache__/
+airflow.db
+airflow.db-shm
+airflow.db-wal
+airflow.cfg
+webserver_config.py
+simple_auth_manager_passwords.json.generated
+
+# Airflow data / generated local files
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+data/tmp/
+data/cache/
+
+# Docker / local env
+.env
+.env.*
+!.env.example
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node / frontend later
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.next/
+out/

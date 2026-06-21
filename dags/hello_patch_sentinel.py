@@ -10,10 +10,24 @@ import pendulum
 
 def hello_patch_sentinel():
     @task
-    def say_hello():
-        return "Hello, Patch Sentinel!"
-    
-    say_hello()
+    def say_hello(number: int):
+        return f"Hello, Patch Sentinel! The number is {number}"
 
+    @task
+    def increment_number(number: int):
+        return number + 1
+
+
+    @task
+    def say_goodbye(number: int):
+        return f"Goodbye, Patch Sentinel! The number was {number}."
+
+
+    starting_number = 42
+    hello = say_hello(starting_number)
+    new_number = increment_number(starting_number)
+    goodbye = say_goodbye(new_number)
+
+    hello >> new_number >> goodbye
 
 hello_patch_sentinel()
